@@ -1,0 +1,418 @@
+
+/* =========================
+   1. 기본 설정
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #9278bd;
+  --purple-dark: #76599f;
+  --purple-light: #eee7f8;
+  --cream: #faf8f4;
+  --white: #ffffff;
+  --text: #403b49;
+  --gray: #918b99;
+  --border: #eae5ef;
+}
+
+body {
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* =========================
+   2. 상단 로고
+========================= */
+
+.header {
+  height: 75px;
+  padding: 0 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--purple-dark);
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logo-icon {
+  font-size: 29px;
+}
+
+.header-tag {
+  color: var(--gray);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   3. 메인 소개 영역
+========================= */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 65px 25px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--purple);
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 37px;
+  line-height: 1.45;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================
+   4. 콘텐츠 영역
+========================= */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mbti-section,
+.chat-section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 30px;
+  box-shadow: 0 8px 30px rgba(80, 60, 110, 0.04);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 25px;
+}
+
+.number {
+  width: 38px;
+  height: 38px;
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.section-heading h2 {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.section-heading p {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+/* =========================
+   5. MBTI 선택 버튼
+========================= */
+
+.mbti-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px;
+}
+
+.mbti-button {
+  border: 1px solid var(--border);
+  background: #faf9fc;
+  border-radius: 12px;
+  padding: 15px 5px;
+  color: #777080;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mbti-button:hover {
+  border-color: var(--purple);
+  background: var(--purple-light);
+  transform: translateY(-2px);
+}
+
+.mbti-button.active {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: white;
+  box-shadow: 0 5px 12px rgba(146, 120, 189, 0.2);
+}
+
+.selected-message {
+  margin-top: 18px;
+  text-align: center;
+  padding: 12px;
+  background: #f9f6fc;
+  border-radius: 10px;
+  color: var(--purple-dark);
+  font-size: 13px;
+}
+
+/* =========================
+   6. 채팅 영역
+========================= */
+
+.chat-box {
+  height: 390px;
+  overflow-y: auto;
+  padding: 22px;
+  background: #faf9fc;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  margin-bottom: 17px;
+}
+
+.welcome-message,
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.bot-avatar,
+.message-avatar {
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 12px;
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.message-content {
+  max-width: 80%;
+}
+
+.message-content strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: var(--purple-dark);
+}
+
+.message-content p {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 13px 16px;
+  border-radius: 4px 15px 15px 15px;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.chat-message.user {
+  flex-direction: row-reverse;
+}
+
+.chat-message.user .message-avatar {
+  background: #e9e3f2;
+}
+
+.chat-message.user .message-content {
+  text-align: right;
+}
+
+.chat-message.user .message-content strong {
+  color: #777080;
+}
+
+.chat-message.user .message-content p {
+  background: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 15px 4px 15px 15px;
+  text-align: left;
+}
+
+.loading-text {
+  color: var(--gray);
+  font-size: 12px;
+}
+
+/* =========================
+   7. 메시지 입력창
+========================= */
+
+.chat-form {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  transition: 0.2s;
+}
+
+.chat-form:focus-within {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(146, 120, 189, 0.08);
+}
+
+.chat-form textarea {
+  width: 100%;
+  border: none;
+  resize: vertical;
+  min-height: 65px;
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: transparent;
+  line-height: 1.6;
+}
+
+.chat-form textarea::placeholder {
+  color: #b5afbd;
+}
+
+.chat-form textarea:disabled {
+  cursor: not-allowed;
+}
+
+.input-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#charCount {
+  color: #aaa2b1;
+  font-size: 11px;
+}
+
+#sendButton {
+  background: var(--purple);
+  border: none;
+  border-radius: 10px;
+  padding: 11px 19px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#sendButton:hover:not(:disabled) {
+  background: var(--purple-dark);
+  transform: translateY(-1px);
+}
+
+#sendButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.notice {
+  text-align: center;
+  font-size: 11px;
+  color: #aaa2b1;
+  margin-top: 17px;
+}
+
+/* =========================
+   8. 하단
+========================= */
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #aaa2b1;
+  font-size: 11px;
+  border-top: 1px solid var(--border);
+}
+
+/* =========================
+   9. 모바일 반응형
+========================= */
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0 20px;
+    height: 65px;
+  }
+
+  .header-tag {
+    font-size: 8px;
+  }
+
+  .container {
+    padding: 45px 15px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .mbti-section,
+  .chat-section {
+    padding: 20px 15px;
+  }
+
+  .mbti-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+  }
+
+  .mbti-button {
+    padding: 13px 3px;
+    font-size: 12px;
+  }
+
+  .chat-box {
+    height: 350px;
+    padding: 14px;
+  }
+
+  .message-content {
+    max-width: 85%;
+  }
+}

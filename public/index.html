@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>맘모드 | MOMODE</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href="/" class="logo">
+      <span class="logo-icon">♡</span>
+      <span>MOMODE</span>
+    </a>
+    <span class="header-tag">MY PERSONAL AI FRIEND</span>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <span class="eyebrow">YOUR OWN COMFORT ZONE</span>
+      <h1>오늘은 어떤 모드로<br>이야기할까요?</h1>
+      <p>
+        나의 성향에 맞춰 고민을 들어주는 AI 친구,<br>
+        맘모드에서 편하게 이야기해 보세요.
+      </p>
+    </section>
+
+    <section class="content">
+
+      <!-- MBTI 선택 영역 -->
+      <div class="mbti-section">
+        <div class="section-heading">
+          <span class="number">01</span>
+          <div>
+            <h2>나의 MBTI 선택하기</h2>
+            <p>나의 성향을 알려주세요.</p>
+          </div>
+        </div>
+
+        <div class="mbti-grid" id="mbtiGrid">
+          <!-- JavaScript에서 16개 버튼 생성 -->
+        </div>
+
+        <div class="selected-message" id="selectedMessage">
+          먼저 나의 MBTI를 선택해 주세요.
+        </div>
+      </div>
+
+      <!-- 채팅 영역 -->
+      <div class="chat-section">
+
+        <div class="section-heading">
+          <span class="number">02</span>
+          <div>
+            <h2>나의 고민 이야기하기</h2>
+            <p>어떤 이야기든 편하게 들려주세요.</p>
+          </div>
+        </div>
+
+        <div class="chat-box" id="chatMessages">
+          <div class="welcome-message">
+            <div class="bot-avatar">♡</div>
+            <div class="message-content">
+              <strong>맘모드</strong>
+              <p>
+                안녕하세요! 저는 맘모드예요. 😊<br>
+                오늘 무슨 일이 있었나요?<br>
+                사소한 고민이라도 괜찮으니 편하게 이야기해 주세요.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <form id="chatForm" class="chat-form">
+          <textarea
+            id="messageInput"
+            placeholder="고민을 입력해 주세요..."
+            rows="3"
+            maxlength="2000"
+            disabled
+          ></textarea>
+
+          <div class="input-bottom">
+            <span id="charCount">0 / 2000</span>
+            <button type="submit" id="sendButton" disabled>
+              이야기하기 ↗
+            </button>
+          </div>
+        </form>
+
+        <p class="notice">
+          맘모드는 전문적인 심리 상담이나 의료 서비스를 대체하지 않습니다.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 MOMODE. A little space for your feelings.</p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
